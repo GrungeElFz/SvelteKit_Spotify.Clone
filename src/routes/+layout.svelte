@@ -10,6 +10,9 @@
 
 {#if user}
 	<p>Hi, {user.display_name}</p>
+	<form method="POST" action="/api/auth/logout">
+		<button type="submit">Logout</button>
+	</form>
 {/if}
 
 <slot />
