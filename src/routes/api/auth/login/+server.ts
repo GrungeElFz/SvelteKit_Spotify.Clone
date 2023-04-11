@@ -59,7 +59,9 @@ const scope = `
  * {@link https://developer.spotify.com/documentation/web-api/tutorials/code-flow | Authorization Code Flow }
  *
  */
-export const GET: RequestHandler = () => {
+export const GET: RequestHandler = ({ cookies }) => {
+	cookies.set('spotify_auth_state', state);
+	cookies.set('spotify_auth_challenge_verifier', challenge.code_verifier);
 	throw redirect(
 		307,
 		`https://accounts.spotify.com/authorize?${new URLSearchParams({
