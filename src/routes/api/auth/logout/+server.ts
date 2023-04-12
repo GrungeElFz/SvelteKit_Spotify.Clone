@@ -1,8 +1,13 @@
-import { redirect } from '@sveltejs/kit';
+import { json, redirect } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
-export const POST: RequestHandler = ({ cookies }) => {
+export const POST: RequestHandler = ({ cookies, request }) => {
 	cookies.delete('refresh_token', { path: '/' });
 	cookies.delete('access_token', { path: '/' });
+
+	if (request.headers.get('accept') === 'application/json') {
+		return json({ sucess: true });
+	}
+
 	throw redirect(303, '/login');
 };
