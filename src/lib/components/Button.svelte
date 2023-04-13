@@ -12,3 +12,16 @@
 >
 	<slot />
 </svelte:element>
+
+<style lang="scss">
+	.button {
+		display: inline-block;
+		border: none;
+		font-weight: 600;
+		font-size: functions.toREM(14);
+		border-radius: 20px;
+		cursor: pointer;
+		padding: 7px 15px;
+		text-decoration: none;
+	}
+</style>
