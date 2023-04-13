@@ -1,6 +1,6 @@
-<script>
-	import { LogInIcon } from 'lucide-svelte';
+<script lang="ts">
+	import { Button } from '$components';
 </script>
 
-<LogInIcon />
-<a href="/api/auth/login">Login</a>
+<Button element="a">Login</Button>
+<Button element="button">Login</Button>
