@@ -2,5 +2,5 @@
 	import { Button } from '$components';
 </script>
 
-<Button element="a">Login</Button>
+<Button element="a" variant="outline">Login</Button>
 <Button element="button">Login</Button>
