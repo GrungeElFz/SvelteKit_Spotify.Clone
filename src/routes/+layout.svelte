@@ -15,3 +15,16 @@
 		</main>
 	</div>
 </div>
+
+<style lang="scss">
+	#main {
+		#content {
+			main#main-content {
+				padding: 30px 15px 60px;
+				@include breakpoint.up('md') {
+					padding: 30px 30px 60px;
+				}
+			}
+		}
+	}
+</style>
