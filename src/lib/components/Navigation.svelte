@@ -89,6 +89,8 @@
 			}
 		}
 		&.desktop {
+			position: sticky;
+			top: 0;
 			.nav-content-inner {
 				@include breakpoint.up('md') {
 					display: block;
