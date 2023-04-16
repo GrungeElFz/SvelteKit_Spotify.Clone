@@ -16,6 +16,7 @@
 		</div>
 	{/if}
 	<div id="content">
+		<div id="topbar">Top Bar</div>
 		<main id="main-content">
 			<slot />
 		</main>
@@ -27,6 +28,15 @@
 		display: flex;
 		#content {
 			flex: 1;
+			#topbar {
+				position: fixed;
+				height: var(--header-height);
+				padding: 0 15px;
+				display: flex;
+				align-items: center;
+				width: 100%;
+				z-index: 100;
+			}
 			main#main-content {
 				padding: 30px 15px 60px;
 				@include breakpoint.up('md') {
