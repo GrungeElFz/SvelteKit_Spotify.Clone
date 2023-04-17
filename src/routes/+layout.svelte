@@ -36,6 +36,10 @@
 				align-items: center;
 				width: 100%;
 				z-index: 100;
+				@include breakpoint.up('md') {
+					padding: 0 30px;
+					width: calc(100% - var(--sidebar-width));
+				}
 			}
 			main#main-content {
 				padding: 30px 15px 60px;
