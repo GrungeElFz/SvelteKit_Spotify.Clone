@@ -36,7 +36,7 @@
 			/>
 			Top Bar
 		</div>
-		<main id="main-content">
+		<main id="main-content" class:logged-in={user}>
 			<slot />
 		</main>
 	</div>
@@ -72,6 +72,9 @@
 				padding: 30px 15px 60px;
 				@include breakpoint.up('md') {
 					padding: 30px 30px 60px;
+				}
+				&.logged-in {
+					padding-top: calc(30px + var(--header-height)) !important;
 				}
 			}
 		}
