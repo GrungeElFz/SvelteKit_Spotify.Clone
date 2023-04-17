@@ -6,8 +6,20 @@
 
 	export let data: LayoutData;
 
+	let topbar: HTMLElement;
+	let scrollY: number;
+	let headerOpacity = 0;
+
+	$: if (topbar) {
+		headerOpacity = scrollY / topbar.offsetHeight < 1 ? scrollY / topbar.offsetHeight : 1;
+	}
+
+	$: console.log(topbar && scrollY / topbar.offsetHeight);
+
 	$: user = data.user;
 </script>
+
+<svelte:window bind:scrollY />
 
 <div id="main">
 	{#if user}
@@ -16,8 +28,12 @@
 		</div>
 	{/if}
 	<div id="content">
-		<div id="topbar">
-			<div class="topbar-bg" style:background-color="var(--header-color)" />
+		<div id="topbar" bind:this={topbar}>
+			<div
+				class="topbar-bg"
+				style:background-color="var(--header-color)"
+				style:opacity={headerOpacity}
+			/>
 			Top Bar
 		</div>
 		<main id="main-content">
