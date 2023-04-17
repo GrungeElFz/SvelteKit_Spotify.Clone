@@ -1,0 +1,4 @@
+<div class="content">
+	<div class="left">Left</div>
+	<div class="right">Right</div>
+</div>
