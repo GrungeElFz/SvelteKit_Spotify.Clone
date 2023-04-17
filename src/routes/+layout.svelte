@@ -16,7 +16,10 @@
 		</div>
 	{/if}
 	<div id="content">
-		<div id="topbar">Top Bar</div>
+		<div id="topbar">
+			<div class="topbar-bg" style:background-color="var(--header-color)" />
+			Top Bar
+		</div>
 		<main id="main-content">
 			<slot />
 		</main>
@@ -36,6 +39,14 @@
 				align-items: center;
 				width: 100%;
 				z-index: 100;
+				.topbar-bg {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top: 0;
+					left: 0;
+					z-index: -1;
+				}
 				@include breakpoint.up('md') {
 					padding: 0 30px;
 					width: calc(100% - var(--sidebar-width));
