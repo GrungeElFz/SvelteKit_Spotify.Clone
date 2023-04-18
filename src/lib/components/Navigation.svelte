@@ -2,6 +2,7 @@
 	import { Home, Search, ListMusic, type Icon } from 'lucide-svelte';
 	import type { ComponentType } from 'svelte';
 	import { page } from '$app/stores';
+	import { fade } from 'svelte/transition';
 	import logo from '$assets/Spotify_White.Logo.png';
 
 	export let desktop: boolean;
@@ -38,7 +39,7 @@
 
 <div class="nav-content" class:desktop class:mobile={!desktop}>
 	{#if !desktop && isMobileMenuOpen}
-		<div class="overlay" on:click={closeMenu} />
+		<div class="overlay" on:click={closeMenu} transition:fade={{ duration: 200 }} />
 	{/if}
 	<nav aria-label="Main">
 		{#if !desktop}
