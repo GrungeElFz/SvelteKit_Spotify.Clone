@@ -1,5 +1,11 @@
+<script>
+	import { Navigation } from '$components';
+</script>
+
 <div class="content">
-	<div class="left">Left</div>
+	<div class="left">
+		<Navigation desktop={false} />
+	</div>
 	<div class="right">Right</div>
 </div>
 
