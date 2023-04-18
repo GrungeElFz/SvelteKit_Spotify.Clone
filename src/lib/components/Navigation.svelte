@@ -6,6 +6,9 @@
 
 	export let desktop: boolean;
 
+	let isMobileMenuOpen = false;
+	$: isOpen = desktop || isMobileMenuOpen;
+
 	const menuItems: { path: string; label: string; icon: ComponentType<Icon> }[] = [
 		{
 			path: '/',
@@ -23,11 +26,25 @@
 			icon: ListMusic
 		}
 	];
+
+	const openMenu = () => {
+		isMobileMenuOpen = true;
+	};
+
+	const closeMenu = () => {
+		isMobileMenuOpen = false;
+	};
 </script>
 
 <div class="nav-content" class:desktop class:mobile={!desktop}>
 	<nav aria-label="Main">
-		<div class="nav-content-inner">
+		{#if !desktop}
+			<button on:click={openMenu}>Open</button>
+		{/if}
+		<div class="nav-content-inner" class:is-hidden={!isOpen}>
+			{#if !desktop}
+				<button on:click={closeMenu}>Close</button>
+			{/if}
 			<img src={logo} class="logo" alt="Spotify" />
 			<ul>
 				{#each menuItems as item}
