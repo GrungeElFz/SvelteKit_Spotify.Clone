@@ -37,6 +37,16 @@
 	};
 </script>
 
+<svelte:head>
+	{#if !desktop && isMobileMenuOpen}
+		<style>
+			body {
+				overflow: hidden;
+			}
+		</style>
+	{/if}
+</svelte:head>
+
 <div class="nav-content" class:desktop class:mobile={!desktop}>
 	{#if !desktop && isMobileMenuOpen}
 		<div class="overlay" on:click={closeMenu} transition:fade={{ duration: 200 }} />
