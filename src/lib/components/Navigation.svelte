@@ -114,5 +114,19 @@
 				}
 			}
 		}
+		&.mobile .nav-content-inner {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 100;
+			transition: transform 200ms, opacity 200ms;
+			&.is-hidden {
+				transform: translateX(-100%);
+				opacity: 0;
+			}
+			@include breakpoint.down('md') {
+				display: block;
+			}
+		}
 	}
 </style>
