@@ -37,6 +37,9 @@
 </script>
 
 <div class="nav-content" class:desktop class:mobile={!desktop}>
+	{#if !desktop && isMobileMenuOpen}
+		<div class="overlay" on:click={closeMenu} />
+	{/if}
 	<nav aria-label="Main">
 		{#if !desktop}
 			<button on:click={openMenu}>Open</button>
@@ -62,6 +65,19 @@
 
 <style lang="scss">
 	.nav-content {
+		.overlay {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: var(--sidebar-color);
+			opacity: 0.75;
+			z-index: 100;
+			@include breakpoint.up('md') {
+				display: none;
+			}
+		}
 		.logo {
 			max-width: 100%;
 			width: 130px;
