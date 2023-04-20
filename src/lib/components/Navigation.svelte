@@ -53,9 +53,13 @@
 	{/if}
 	<nav aria-label="Main">
 		{#if !desktop}
-			<button on:click={openMenu}>Open</button>
+			<button on:click={openMenu} aria-expanded={isOpen}>Open</button>
 		{/if}
-		<div class="nav-content-inner" class:is-hidden={!isOpen}>
+		<div
+			class="nav-content-inner"
+			class:is-hidden={!isOpen}
+			style:visibility={isOpen ? 'visible' : 'hidden'}
+		>
 			{#if !desktop}
 				<button on:click={closeMenu}>Close</button>
 			{/if}
@@ -146,7 +150,7 @@
 			top: 0;
 			left: 0;
 			z-index: 100;
-			transition: transform 200ms, opacity 200ms;
+			transition: transform 200ms, opacity 200ms, visibility 200ms;
 			&.is-hidden {
 				transform: translateX(-100%);
 				opacity: 0;
