@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Home, Search, ListMusic, type Icon } from 'lucide-svelte';
 	import type { ComponentType } from 'svelte';
+	import { tick } from 'svelte';
 	import { page } from '$app/stores';
 	import { fade } from 'svelte/transition';
 	import logo from '$assets/Spotify_White.Logo.png';
@@ -9,6 +10,9 @@
 
 	let isMobileMenuOpen = false;
 	$: isOpen = desktop || isMobileMenuOpen;
+
+	let openMenuButton: HTMLButtonElement;
+	let closeMenuButton: HTMLButtonElement;
 
 	const menuItems: { path: string; label: string; icon: ComponentType<Icon> }[] = [
 		{
@@ -28,12 +32,16 @@
 		}
 	];
 
-	const openMenu = () => {
+	const openMenu = async () => {
 		isMobileMenuOpen = true;
+		await tick();
+		closeMenuButton.focus();
 	};
 
-	const closeMenu = () => {
+	const closeMenu = async () => {
 		isMobileMenuOpen = false;
+		await tick();
+		openMenuButton.focus();
 	};
 </script>
 
@@ -53,7 +61,7 @@
 	{/if}
 	<nav aria-label="Main">
 		{#if !desktop}
-			<button on:click={openMenu} aria-expanded={isOpen}>Open</button>
+			<button bind:this={openMenuButton} on:click={openMenu} aria-expanded={isOpen}>Open</button>
 		{/if}
 		<div
 			class="nav-content-inner"
@@ -61,7 +69,7 @@
 			style:visibility={isOpen ? 'visible' : 'hidden'}
 		>
 			{#if !desktop}
-				<button on:click={closeMenu}>Close</button>
+				<button bind:this={closeMenuButton} on:click={closeMenu}>Close</button>
 			{/if}
 			<img src={logo} class="logo" alt="Spotify" />
 			<ul>
@@ -150,8 +158,9 @@
 			top: 0;
 			left: 0;
 			z-index: 100;
-			transition: transform 200ms, opacity 200ms, visibility 200ms;
+			transition: transform 200ms, opacity 200ms;
 			&.is-hidden {
+				transition: transform 200ms, opacity 200ms, visibility 200ms;
 				transform: translateX(-100%);
 				opacity: 0;
 			}
