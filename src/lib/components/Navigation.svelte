@@ -2,8 +2,9 @@
 	import { Home, Search, ListMusic, type Icon } from 'lucide-svelte';
 	import type { ComponentType } from 'svelte';
 	import { tick } from 'svelte';
-	import { page } from '$app/stores';
 	import { fade } from 'svelte/transition';
+	import { page } from '$app/stores';
+	import { beforeNavigate } from '$app/navigation';
 	import logo from '$assets/Spotify_White.Logo.png';
 
 	export let desktop: boolean;
@@ -43,6 +44,10 @@
 		await tick();
 		openMenuButton.focus();
 	};
+
+	beforeNavigate(() => {
+		isMobileMenuOpen = false;
+	});
 </script>
 
 <svelte:head>
