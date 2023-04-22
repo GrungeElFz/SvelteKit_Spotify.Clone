@@ -14,6 +14,7 @@
 
 	let openMenuButton: HTMLButtonElement;
 	let closeMenuButton: HTMLButtonElement;
+	let lastFocusableElement: HTMLAnchorElement;
 
 	const menuItems: { path: string; label: string; icon: ComponentType<Icon> }[] = [
 		{
@@ -78,12 +79,19 @@
 			{/if}
 			<img src={logo} class="logo" alt="Spotify" />
 			<ul>
-				{#each menuItems as item}
+				{#each menuItems as item, index}
 					<li class:active={item.path === $page.url.pathname}>
-						<a href={item.path}>
-							<svelte:component this={item.icon} size={26} />
-							{item.label}
-						</a>
+						{#if menuItems.length === index + 1}
+							<a bind:this={lastFocusableElement} href={item.path}>
+								<svelte:component this={item.icon} size={26} />
+								{item.label}
+							</a>
+						{:else}
+							<a href={item.path}>
+								<svelte:component this={item.icon} size={26} />
+								{item.label}
+							</a>
+						{/if}
 					</li>
 				{/each}
 			</ul>
