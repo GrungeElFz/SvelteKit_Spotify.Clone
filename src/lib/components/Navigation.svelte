@@ -46,6 +46,21 @@
 		openMenuButton.focus();
 	};
 
+	const moveFocusToBottom = (e: KeyboardEvent) => {
+		if (desktop) return;
+		if (e.key === 'Tab' && e.shiftKey) {
+			e.preventDefault();
+			lastFocusableElement.focus();
+		}
+	};
+	const moveFocusToTop = (e: KeyboardEvent) => {
+		if (desktop) return;
+		if (e.key === 'Tab' && !e.shiftKey) {
+			e.preventDefault();
+			closeMenuButton.focus();
+		}
+	};
+
 	beforeNavigate(() => {
 		isMobileMenuOpen = false;
 	});
@@ -75,7 +90,9 @@
 			style:visibility={isOpen ? 'visible' : 'hidden'}
 		>
 			{#if !desktop}
-				<button bind:this={closeMenuButton} on:click={closeMenu}>Close</button>
+				<button bind:this={closeMenuButton} on:click={closeMenu} on:keydown={moveFocusToBottom}
+					>Close</button
+				>
 			{/if}
 			<img src={logo} class="logo" alt="Spotify" />
 			<ul>
@@ -89,7 +106,7 @@
 					}}
 					<li class:active={item.path === $page.url.pathname}>
 						{#if menuItems.length === index + 1}
-							<a bind:this={lastFocusableElement} href={item.path}>
+							<a bind:this={lastFocusableElement} href={item.path} on:keydown={moveFocusToTop}>
 								<svelte:component this={item.icon} {...iconProps} />
 								{item.label}
 							</a>
