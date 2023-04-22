@@ -80,29 +80,22 @@
 			<img src={logo} class="logo" alt="Spotify" />
 			<ul>
 				{#each menuItems as item, index}
+					{@const iconProps = {
+						focusable: 'false',
+						'aria-hidden': 'true',
+						color: 'var(--text-color)',
+						strokeWidth: 2,
+						size: 26
+					}}
 					<li class:active={item.path === $page.url.pathname}>
 						{#if menuItems.length === index + 1}
 							<a bind:this={lastFocusableElement} href={item.path}>
-								<svelte:component
-									this={item.icon}
-									focusable="false"
-									aria-hidden="true"
-									color="var(--text-color)"
-									strokeWidth={2}
-									size={26}
-								/>
+								<svelte:component this={item.icon} {...iconProps} />
 								{item.label}
 							</a>
 						{:else}
 							<a href={item.path}>
-								<svelte:component
-									this={item.icon}
-									focusable="false"
-									aria-hidden="true"
-									color="var(--text-color)"
-									strokeWidth={2}
-									size={26}
-								/>
+								<svelte:component this={item.icon} {...iconProps} />
 								{item.label}
 							</a>
 						{/if}
