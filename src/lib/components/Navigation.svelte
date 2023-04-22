@@ -61,6 +61,12 @@
 		}
 	};
 
+	const handleEscape = (e: KeyboardEvent) => {
+		if (e.key === 'Escape') {
+			closeMenu();
+		}
+	};
+
 	beforeNavigate(() => {
 		isMobileMenuOpen = false;
 	});
@@ -78,7 +84,12 @@
 
 <div class="nav-content" class:desktop class:mobile={!desktop}>
 	{#if !desktop && isMobileMenuOpen}
-		<div class="overlay" on:click={closeMenu} transition:fade={{ duration: 200 }} />
+		<div
+			class="overlay"
+			on:click={closeMenu}
+			on:keyup={handleEscape}
+			transition:fade={{ duration: 200 }}
+		/>
 	{/if}
 	<nav aria-label="Main">
 		{#if !desktop}
@@ -88,6 +99,7 @@
 			class="nav-content-inner"
 			class:is-hidden={!isOpen}
 			style:visibility={isOpen ? 'visible' : 'hidden'}
+			on:keyup={handleEscape}
 		>
 			{#if !desktop}
 				<button bind:this={closeMenuButton} on:click={closeMenu} on:keydown={moveFocusToBottom}
