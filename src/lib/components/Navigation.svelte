@@ -82,7 +82,7 @@
 				{#each menuItems as item, index}
 					{@const iconProps = {
 						focusable: 'false',
-						'aria-hidden': 'true',
+						'aria-hidden': true,
 						color: 'var(--text-color)',
 						strokeWidth: 2,
 						size: 26
