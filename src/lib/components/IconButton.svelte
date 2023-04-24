@@ -13,6 +13,6 @@
 </script>
 
 <button on:click on:mouseover on:focus on:keydown {...$$restProps}>
-	<svelte:component this={icon} focusable="false" />
-	<span>{label}</span>
+	<svelte:component this={icon} focusable="false" aria-hidden="true" color="var(--text-color)" />
+	<span class="visually-hidden">{label}</span>
 </button>
