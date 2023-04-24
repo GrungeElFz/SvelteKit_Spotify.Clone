@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Home, Search, ListMusic, type Icon } from 'lucide-svelte';
+	import { Home, Search, ListMusic, Menu, type Icon } from 'lucide-svelte';
+	import { IconButton } from '$components';
 	import type { ComponentType } from 'svelte';
 	import { tick } from 'svelte';
 	import { fade } from 'svelte/transition';
@@ -93,6 +94,7 @@
 	{/if}
 	<nav aria-label="Main">
 		{#if !desktop}
+			<IconButton icon={Menu} />
 			<button bind:this={openMenuButton} on:click={openMenu} aria-expanded={isOpen}>Open</button>
 		{/if}
 		<div
