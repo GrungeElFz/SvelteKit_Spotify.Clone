@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Home, Search, ListMusic, Menu, type Icon } from 'lucide-svelte';
+	import { Home, Search, ListMusic, Menu, X, type Icon } from 'lucide-svelte';
 	import { IconButton } from '$components';
 	import type { ComponentType } from 'svelte';
 	import { tick } from 'svelte';
@@ -13,8 +13,8 @@
 	let isMobileMenuOpen = false;
 	$: isOpen = desktop || isMobileMenuOpen;
 
-	let openMenuButton: HTMLButtonElement;
-	let closeMenuButton: HTMLButtonElement;
+	let openMenuButton: IconButton;
+	let closeMenuButton: IconButton;
 	let lastFocusableElement: HTMLAnchorElement;
 
 	const menuItems: { path: string; label: string; icon: ComponentType<Icon> }[] = [
@@ -38,13 +38,13 @@
 	const openMenu = async () => {
 		isMobileMenuOpen = true;
 		await tick();
-		closeMenuButton.focus();
+		closeMenuButton.getButton().focus();
 	};
 
 	const closeMenu = async () => {
 		isMobileMenuOpen = false;
 		await tick();
-		openMenuButton.focus();
+		openMenuButton.getButton().focus();
 	};
 
 	const moveFocusToBottom = (e: KeyboardEvent) => {
@@ -58,7 +58,7 @@
 		if (desktop) return;
 		if (e.key === 'Tab' && !e.shiftKey) {
 			e.preventDefault();
-			closeMenuButton.focus();
+			closeMenuButton.getButton().focus();
 		}
 	};
 
@@ -94,8 +94,13 @@
 	{/if}
 	<nav aria-label="Main">
 		{#if !desktop}
-			<IconButton icon={Menu} label="Open Menu" />
-			<button bind:this={openMenuButton} on:click={openMenu} aria-expanded={isOpen}>Open</button>
+			<IconButton
+				icon={Menu}
+				label="Open Menu"
+				bind:this={openMenuButton}
+				on:click={openMenu}
+				aria-expanded={isOpen}
+			/>
 		{/if}
 		<div
 			class="nav-content-inner"
@@ -104,9 +109,13 @@
 			on:keyup={handleEscape}
 		>
 			{#if !desktop}
-				<button bind:this={closeMenuButton} on:click={closeMenu} on:keydown={moveFocusToBottom}
-					>Close</button
-				>
+				<IconButton
+					icon={X}
+					label="CLose Menu"
+					bind:this={closeMenuButton}
+					on:click={closeMenu}
+					on:keydown={moveFocusToBottom}
+				/>
 			{/if}
 			<img src={logo} class="logo" alt="Spotify" />
 			<ul>
