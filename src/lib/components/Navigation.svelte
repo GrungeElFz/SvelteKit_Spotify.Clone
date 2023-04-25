@@ -111,7 +111,7 @@
 			{#if !desktop}
 				<IconButton
 					icon={X}
-					label="CLose Menu"
+					label="Close Menu"
 					bind:this={closeMenuButton}
 					on:click={closeMenu}
 					on:keydown={moveFocusToBottom}
