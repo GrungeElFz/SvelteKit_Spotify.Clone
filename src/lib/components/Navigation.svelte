@@ -100,6 +100,7 @@
 				bind:this={openMenuButton}
 				on:click={openMenu}
 				aria-expanded={isOpen}
+				class="menu-button"
 			/>
 		{/if}
 		<div
@@ -115,6 +116,7 @@
 					bind:this={closeMenuButton}
 					on:click={closeMenu}
 					on:keydown={moveFocusToBottom}
+					class="close-menu-button"
 				/>
 			{/if}
 			<img src={logo} class="logo" alt="Spotify" />
