@@ -5,6 +5,10 @@
 
 <div class="content">
 	<div class="left">
+		<!--
+			The Navigation component will only be rendered in the browser environment.
+			It will not be rendered during SSR.
+		-->
 		{#if browser}
 			<Navigation desktop={false} />
 		{/if}
