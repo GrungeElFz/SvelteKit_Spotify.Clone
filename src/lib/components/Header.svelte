@@ -2,6 +2,7 @@
 	import { browser } from '$app/environment';
 	import { Navigation } from '$components';
 	import { page } from '$app/stores';
+	import { ChevronDown } from 'lucide-svelte';
 
 	$: user = $page.data.user;
 </script>
@@ -24,6 +25,9 @@
 						src={user.images[0].url}
 						alt={user?.display_name ? `Profile picture of ${user?.display_name}` : ``}
 					/>
+					{user?.display_name}
+					<span class="visually-hidden">Profile Menu</span>
+					<ChevronDown class="profile-arrow" />
 				{/if}
 			</button>
 		</div>
