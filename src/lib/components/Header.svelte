@@ -41,4 +41,26 @@
 		align-items: center;
 		width: 100%;
 	}
+	.profile-button {
+		background: none;
+		border: 1px solid var(--border);
+		padding: 5px;
+		border-radius: 25px;
+		display: flex;
+		align-items: center;
+		color: var(--text-color);
+		cursor: pointer;
+		:global(.profile-arrow) {
+			margin-left: 3px;
+		}
+		img {
+			width: 28px;
+			height: 28px;
+			border-radius: 100%;
+			margin-right: 10px;
+		}
+		&:hover {
+			background-color: var(--accent-color);
+		}
+	}
 </style>
