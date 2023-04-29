@@ -20,7 +20,10 @@
 		<div id="profile-button">
 			<button class="profile-button">
 				{#if user?.images && user.images.length > 0}
-					<img src={user.images[0].url} alt="" />
+					<img
+						src={user.images[0].url}
+						alt={user?.display_name ? `Profile picture of ${user?.display_name}` : ``}
+					/>
 				{/if}
 			</button>
 		</div>
