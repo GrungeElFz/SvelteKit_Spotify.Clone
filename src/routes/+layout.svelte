@@ -21,6 +21,10 @@
 
 <svelte:window bind:scrollY />
 
+<svelte:head>
+	<title>Spotify</title>
+</svelte:head>
+
 <div id="main">
 	{#if user}
 		<div id="sidebar">
