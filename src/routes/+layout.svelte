@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Navigation, Header } from '$components';
+	import { page } from '$app/stores';
 	import 'modern-normalize/modern-normalize.css';
 	import '../styles/main.scss';
 	import type { LayoutData } from './$types';
@@ -22,7 +23,7 @@
 <svelte:window bind:scrollY />
 
 <svelte:head>
-	<title>Spotify</title>
+	<title>Spotify{$page.data.title ? ` - ${$page.data.title}` : ''}</title>
 </svelte:head>
 
 <div id="main">
