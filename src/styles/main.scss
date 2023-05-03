@@ -97,3 +97,7 @@ a {
 	white-space: nowrap;
 	width: 1px;
 }
+
+#nprogress .bar {
+	background: var(--accent-color) !important;
+}
