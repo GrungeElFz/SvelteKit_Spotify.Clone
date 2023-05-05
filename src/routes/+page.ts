@@ -15,6 +15,13 @@ export const load: PageLoad = async ({ fetch, parent }) => {
 	const categoriesResponseJSON: SpotifyApi.MultipleCategoriesResponse | undefined =
 		categoriesResponse.ok ? await categoriesResponse.json() : undefined;
 
+	/**
+	 * Randomize the order of the categories
+	 *
+	 * @param categoriesResponseJSON - The JSON response containing an array of category objects.
+	 * @return An array of 0-3 categories, randomly sorted and sliced.
+	 * @return An empty array, if the response is undefined.
+	 */
 	const randomCategories = categoriesResponseJSON
 		? categoriesResponseJSON.categories.items.sort(() => 0.5 - Math.random()).slice(0, 3)
 		: [];
