@@ -11,6 +11,14 @@ export const load: PageLoad = async ({ fetch, parent }) => {
 		[newReleases, featuredPlaylists, userPlaylists]
 	);
 
+	const categoriesResponse = await fetch('/api/spotify/browse/categories');
+	const categoriesResponseJSON: SpotifyApi.MultipleCategoriesResponse | undefined =
+		categoriesResponse.ok ? await categoriesResponse.json() : undefined;
+
+	const randomCategories = categoriesResponseJSON
+		? categoriesResponseJSON.categories.items.sort(() => 0.5 - Math.random()).slice(0, 3)
+		: [];
+
 	return {
 		newReleases: newReleasesResponse.ok
 			? (newReleasesResponse.json() as Promise<SpotifyApi.ListOfNewReleasesResponse>)
