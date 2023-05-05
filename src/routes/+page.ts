@@ -45,7 +45,7 @@ export const load: PageLoad = async ({ fetch, parent }) => {
 			? (featuredPlaylistsResponse.json() as Promise<SpotifyApi.ListOfFeaturedPlaylistsResponse>)
 			: undefined,
 		userPlaylists: userPlaylistsResponse.ok
-			? (userPlaylistsResponse.json() as Promise<SpotifyApi.ListOfCurrentUsersPlaylistsResponse>)
+			? (userPlaylistsResponse.json() as Promise<SpotifyApi.ListOfUsersPlaylistsResponse>)
 			: undefined,
 		homeCategories: randomCategories,
 		categoriesPlaylists: Promise.all(
