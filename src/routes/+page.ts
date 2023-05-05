@@ -12,8 +12,14 @@ export const load: PageLoad = async ({ fetch, parent }) => {
 	);
 
 	return {
-		newReleases: newReleasesResponse.ok ? newReleasesResponse.json() : undefined,
-		featuredPlaylists: featuredPlaylistsResponse.ok ? featuredPlaylistsResponse.json() : undefined,
-		userPlaylists: userPlaylistsResponse.ok ? userPlaylistsResponse.json() : undefined
+		newReleases: newReleasesResponse.ok
+			? (newReleasesResponse.json() as Promise<SpotifyApi.ListOfNewReleasesResponse>)
+			: undefined,
+		featuredPlaylists: featuredPlaylistsResponse.ok
+			? (featuredPlaylistsResponse.json() as Promise<SpotifyApi.ListOfFeaturedPlaylistsResponse>)
+			: undefined,
+		userPlaylists: userPlaylistsResponse.ok
+			? (userPlaylistsResponse.json() as Promise<SpotifyApi.ListOfCurrentUsersPlaylistsResponse>)
+			: undefined
 	};
 };
