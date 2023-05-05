@@ -4,7 +4,7 @@ export const load: PageLoad = async ({ fetch, parent }) => {
 	const { user } = await parent();
 	const newReleases = fetch('/api/spotify/browse/new-releases?limit=10');
 	const featuredPlaylists = fetch('/api/spotify/browse/featured-playlists?limit=10');
-	const userPlaylists = fetch(`/api/spotify/user/${user?.id}/playlists?limit=10`);
+	const userPlaylists = fetch(`/api/spotify/users/${user?.id}/playlists?limit=10`);
 
 	const categoriesResponse = await fetch('/api/spotify/browse/categories');
 	const categoriesResponseJSON: SpotifyApi.MultipleCategoriesResponse | undefined =
