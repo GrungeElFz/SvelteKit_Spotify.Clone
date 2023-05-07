@@ -18,6 +18,8 @@ export default async function fetchRefresh(
 		const refreshResponse = await window.refreshPromise;
 		if (!refreshResponse.ok) throw error(401, 'Session expired');
 		return fetch(path);
+	} else if (response.status === 500) {
+		throw error(500, 'Internal server error');
 	} else {
 		return response;
 	}
