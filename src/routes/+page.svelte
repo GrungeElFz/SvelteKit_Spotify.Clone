@@ -69,3 +69,19 @@
 		</div>
 	</section>
 {/each}
+
+<style lang="scss">
+	.content-row {
+		.content-row-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 20px;
+			.section-title {
+				font-size: functions.toREM(22);
+				font-weight: 600;
+				margin: 0;
+			}
+		}
+	}
+</style>
