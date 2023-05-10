@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { element, select_options } from 'svelte/internal';
 	import type { PageData } from './$types';
 	import Button from '$components/Button.svelte';
 
