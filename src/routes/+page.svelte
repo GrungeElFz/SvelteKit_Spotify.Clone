@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { select_options } from 'svelte/internal';
+	import { element, select_options } from 'svelte/internal';
 	import type { PageData } from './$types';
+	import Button from '$components/Button.svelte';
 
 	export let data: PageData;
 
@@ -45,4 +46,15 @@
 	}
 </script>
 
-<h1>Home</h1>
+{#each sections as section}
+	<section class="content-row">
+		<div class="content-row-header">
+			<div class="right">
+				<h2 class="section-title">{section.title}</h2>
+			</div>
+			<div class="left">
+				<Button element="a" href={section.path} variant="outline">See all</Button>
+			</div>
+		</div>
+	</section>
+{/each}
