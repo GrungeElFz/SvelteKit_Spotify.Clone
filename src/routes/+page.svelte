@@ -58,5 +58,14 @@
 				</Button>
 			</div>
 		</div>
+
+		<div class="grid-items">
+			{#each section.items as item}
+				<div class="grid-item">
+					<h5>{item.type}</h5>
+					<h3>{item.name}</h3>
+				</div>
+			{/each}
+		</div>
 	</section>
 {/each}
