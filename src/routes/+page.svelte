@@ -52,7 +52,10 @@
 				<h2 class="section-title">{section.title}</h2>
 			</div>
 			<div class="left">
-				<Button element="a" href={section.path} variant="outline">See all</Button>
+				<Button element="a" href={section.path} variant="outline">
+					See all
+					<span class="visually-hidden">{section.title}</span>
+				</Button>
 			</div>
 		</div>
 	</section>
