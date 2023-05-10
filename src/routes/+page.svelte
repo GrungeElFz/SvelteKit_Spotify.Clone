@@ -25,6 +25,16 @@
 				items: data.featuredPlaylists.playlists.items
 			});
 		}
+		data.homeCategories.forEach((category, index) => {
+			const categoryPlaylist = data.categoriesPlaylists[index];
+			if (categoryPlaylist) {
+				section.push({
+					title: category.name,
+					path: `/category/${category.id}`,
+					items: categoryPlaylist.playlists.items
+				});
+			}
+		});
 		if (data.userPlaylists) {
 			section.push({
 				title: 'Your Playlists',
