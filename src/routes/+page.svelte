@@ -72,6 +72,7 @@
 
 <style lang="scss">
 	.content-row {
+		margin-bottom: 40px;
 		.content-row-header {
 			display: flex;
 			align-items: center;
