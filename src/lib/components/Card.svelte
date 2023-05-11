@@ -17,3 +17,19 @@
 		</div>
 	{/if}
 </div>
+
+<style lang="scss">
+	.card {
+		background-color: var(--dark-grey);
+		padding: 10px;
+		box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+		border-radius: 4px;
+		transition: background 0.3s;
+		img {
+			width: 100%;
+			aspect-ratio: 1;
+			object-fit: cover;
+			margin: 0 0 20px;
+		}
+	}
+</style>
