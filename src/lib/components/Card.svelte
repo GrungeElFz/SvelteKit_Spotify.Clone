@@ -31,5 +31,15 @@
 			object-fit: cover;
 			margin: 0 0 20px;
 		}
+		.cover-placeholder {
+			width: 100%;
+			aspect-ratio: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: var(--medium-grey);
+			margin: 0 0 20px;
+			transition: background 0.3s;
+		}
 	}
 </style>
