@@ -25,6 +25,12 @@
 		box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
 		border-radius: 4px;
 		transition: background 0.3s;
+		&:hover {
+			background-color: var(--medium-grey);
+			.cover-placeholder {
+				background-color: var(--dark-grey);
+			}
+		}
 		img {
 			width: 100%;
 			aspect-ratio: 1;
