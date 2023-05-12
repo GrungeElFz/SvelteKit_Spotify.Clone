@@ -32,6 +32,7 @@
 		box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
 		border-radius: 4px;
 		transition: background 0.3s;
+		position: relative;
 		&:hover {
 			background-color: var(--medium-grey);
 			.cover-placeholder {
@@ -46,6 +47,14 @@
 			a {
 				text-decoration: none;
 				color: var(--text-color);
+				&:after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+				}
 			}
 		}
 		p {
