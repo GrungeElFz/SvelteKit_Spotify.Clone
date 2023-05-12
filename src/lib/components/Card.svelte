@@ -38,6 +38,21 @@
 				background-color: var(--dark-grey);
 			}
 		}
+		h4 {
+			margin: 0 0 10px;
+			font-size: functions.toREM(16);
+			font-weight: 600;
+			line-height: 1;
+			a {
+				text-decoration: none;
+				color: var(--text-color);
+			}
+		}
+		p {
+			margin: 0;
+			color: var(--light-grey);
+			font-size: functions.toREM(14);
+		}
 		img {
 			width: 100%;
 			aspect-ratio: 1;
