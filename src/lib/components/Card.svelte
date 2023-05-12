@@ -47,6 +47,12 @@
 			a {
 				text-decoration: none;
 				color: var(--text-color);
+				&:focus-visible {
+					outline: none;
+					&::after {
+						outline: 2px solid var(--accent-color);
+					}
+				}
 				&:after {
 					content: '';
 					position: absolute;
