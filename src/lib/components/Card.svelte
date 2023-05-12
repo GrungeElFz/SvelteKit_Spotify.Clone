@@ -16,6 +16,13 @@
 			<Music aria-hidden="true" focusable="false" color="var(--light-grey)" />
 		</div>
 	{/if}
+	<h4><a href="/{item.type}/{item.id}">{item.name}</a></h4>
+	{#if item.type === 'album'}
+		<p>{item.artists.map((item) => item.name).join(', ')}</p>
+	{/if}
+	{#if item.type === 'playlist'}
+		<p>{item.description}</p>
+	{/if}
 </div>
 
 <style lang="scss">
