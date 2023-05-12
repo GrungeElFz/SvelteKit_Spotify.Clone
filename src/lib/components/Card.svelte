@@ -64,6 +64,7 @@
 			}
 		}
 		p {
+			position: relative;
 			margin: 0;
 			color: var(--light-grey);
 			font-size: functions.toREM(14);
