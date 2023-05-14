@@ -121,3 +121,12 @@ a {
 		grid-template-columns: repeat(6, minmax(0, 1fr));
 	}
 }
+
+@for $i from 1 through 3 {
+	.truncate-#{$i} {
+		display: -webkit-box;
+		-webkit-line-clamp: $i;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+}
