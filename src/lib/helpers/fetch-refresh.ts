@@ -5,22 +5,22 @@ export default async function fetchRefresh(
 	fetch: (input: URL | RequestInfo, init?: RequestInit | undefined) => Promise<Response>,
 	path: string
 ) {
-	const request = fetch(path);
-	if (!browser) return request;
+	const req = fetch(path);
+	if (!browser) return req;
 
-	const response = await request;
-	if (response.status === 401) {
+	const res = await req;
+	if (res.status === 401) {
 		if (!window.refreshPromise) {
 			window.refreshPromise = fetch('/api/auth/refresh').finally(() => {
 				window.refreshPromise = null;
 			});
 		}
-		const refreshResponse = await window.refreshPromise;
-		if (!refreshResponse.ok) throw error(401, 'Session expired');
+		const refreshRes = await window.refreshPromise;
+		if (!refreshRes.ok) throw error(401, 'Session expired');
 		return fetch(path);
-	} else if (response.status === 500) {
+	} else if (res.status === 500) {
 		throw error(500, 'Internal server error');
 	} else {
-		return response;
+		return res;
 	}
 }
