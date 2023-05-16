@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { getCopyrightSymbol } from '$helpers';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -9,3 +10,15 @@
 
 <h5>{album.album_type}</h5>
 <h1>{album.name}</h1>
+
+<div class="credits">
+	<p class="date">
+		{new Date(album.release_date).toLocaleDateString('en', { dateStyle: 'medium' })}
+	</p>
+	{#each album.copyrights as copyright}
+		<p class="copyright">
+			{getCopyrightSymbol(copyright.type)}
+			{copyright.text}
+		</p>
+	{/each}
+</div>
