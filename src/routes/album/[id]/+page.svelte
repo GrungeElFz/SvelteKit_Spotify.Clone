@@ -30,3 +30,17 @@
 		</p>
 	{/each}
 </div>
+
+<style lang="scss">
+	.credits {
+		margin-top: 40px;
+		p {
+			color: var(--light-grey);
+			margin: 0;
+			font-size: functions.toREM(11);
+			&.date {
+				font-size: functions.toREM(13);
+			}
+		}
+	}
+</style>
