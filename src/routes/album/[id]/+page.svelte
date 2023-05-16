@@ -11,6 +11,14 @@
 <h5>{album.album_type}</h5>
 <h1>{album.name}</h1>
 
+<div class="tracks">
+	<ul>
+		{#each album.tracks.items as track}
+			<li>{track.name}</li>
+		{/each}
+	</ul>
+</div>
+
 <div class="credits">
 	<p class="date">
 		{new Date(album.release_date).toLocaleDateString('en', { dateStyle: 'medium' })}
