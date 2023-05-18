@@ -9,7 +9,12 @@
 	$: console.log(album);
 </script>
 
-<ItemPage title={album.name} type={album.album_type} color={null} image={undefined}>
+<ItemPage
+	title={album.name}
+	type={album.album_type}
+	color={null}
+	image={album.images.length > 0 ? album.images[0].url : undefined}
+>
 	<div class="tracks">
 		<ul>
 			{#each album.tracks.items as track}
