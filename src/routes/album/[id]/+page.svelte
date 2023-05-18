@@ -20,6 +20,9 @@
 			{album.artists.map((artist) => artist.name).join(', ')}
 		</span>
 		<span class="date">{new Date(album.release_date).getFullYear()}</span>
+		<span class="tracks-count">
+			{`${album.total_tracks} Track${album.total_tracks > 1 ? 's' : ''}`}
+		</span>
 	</p>
 
 	<div class="tracks">
