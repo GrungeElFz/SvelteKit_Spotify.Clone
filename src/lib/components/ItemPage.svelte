@@ -30,3 +30,32 @@
 <div class="content">
 	<slot />
 </div>
+
+<style lang="scss">
+	.banner {
+		display: flex;
+		flex-direction: column;
+		@include breakpoint.up('sm') {
+			flex-direction: row;
+		}
+		.cover {
+			margin-right: 40px;
+			img,
+			.cover-placeholder {
+				width: 100;
+				aspect-ratio: 1;
+				object-fit: cover;
+				box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+				@include breakpoint.up('sm') {
+					width: 230px;
+				}
+				@include breakpoint.up('md') {
+					width: 200px;
+				}
+				@include breakpoint.up('lg') {
+					width: 230px;
+				}
+			}
+		}
+	}
+</style>
