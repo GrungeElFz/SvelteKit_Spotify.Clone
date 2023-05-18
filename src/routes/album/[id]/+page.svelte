@@ -15,6 +15,12 @@
 	color={null}
 	image={album.images.length > 0 ? album.images[0].url : undefined}
 >
+	<p class="meta" slot="meta">
+		<span class="artists">
+			{album.artists.map((artist) => artist.name).join(', ')}
+		</span>
+	</p>
+
 	<div class="tracks">
 		<ul>
 			{#each album.tracks.items as track}
