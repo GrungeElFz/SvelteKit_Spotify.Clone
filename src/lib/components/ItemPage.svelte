@@ -8,6 +8,10 @@
 </script>
 
 <div class="banner">
+	<div
+		class="banner-gradient"
+		style="background-image: linear-gradient(0deg, transparent, {color || 'var(--light-grey)'})"
+	/>
 	<div class="cover">
 		{#if image}
 			<img src={image} alt={title} />
