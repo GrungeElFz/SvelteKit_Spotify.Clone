@@ -52,6 +52,7 @@
 		padding: calc(30px + var(--header-height)) 30px 20px;
 		@include breakpoint.up('sm') {
 			flex-direction: row;
+			align-items: flex-end;
 		}
 		.banner-gradient {
 			position: absolute;
