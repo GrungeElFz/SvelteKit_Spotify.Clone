@@ -13,7 +13,7 @@
 			<img src={image} alt={title} />
 		{:else}
 			<div class="cover-placeholder">
-				<Music focusable="false" aria-hidden />
+				<Music focusable="false" aria-hidden color="var(--light-grey)" />
 			</div>
 		{/if}
 	</div>
@@ -54,6 +54,16 @@
 				}
 				@include breakpoint.up('lg') {
 					width: 230px;
+				}
+			}
+			.cover-placeholder {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: var(--medium-grey);
+				:global(svg) {
+					width: 40%;
+					height: 40%;
 				}
 			}
 		}
