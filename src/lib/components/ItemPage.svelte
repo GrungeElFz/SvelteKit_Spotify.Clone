@@ -38,6 +38,24 @@
 		@include breakpoint.up('sm') {
 			flex-direction: row;
 		}
+		.info {
+			.type {
+				text-transform: uppercase;
+				font-weight: 600;
+				font-size: functions.toREM(12);
+				margin: 0;
+			}
+			.title {
+				font-size: functions.toREM(32);
+				margin: 5px 0 0;
+				@include breakpoint.up('md') {
+					font-size: functions.toREM(36);
+				}
+				@include breakpoint.up('lg') {
+					font-size: functions.toREM(54);
+				}
+			}
+		}
 		.cover {
 			margin-right: 40px;
 			img,
