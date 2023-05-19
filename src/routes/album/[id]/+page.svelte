@@ -49,7 +49,7 @@
 <style lang="scss">
 	.meta {
 		font-size: functions.toREM(13);
-		font-size: 600;
+		font-weight: 600;
 		span {
 			margin-right: 5px;
 			&.tracks-count {
