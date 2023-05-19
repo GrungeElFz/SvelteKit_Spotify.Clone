@@ -86,7 +86,7 @@
 			margin-right: 40px;
 			img,
 			.cover-placeholder {
-				width: 100;
+				width: 100%;
 				aspect-ratio: 1;
 				object-fit: cover;
 				box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
