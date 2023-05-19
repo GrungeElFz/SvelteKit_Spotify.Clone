@@ -17,14 +17,14 @@
 			</div>
 		{/if}
 	</div>
-</div>
 
-<div class="info">
-	{#if type}
-		<p class="type">{type}</p>
-	{/if}
-	<h1 class="title">{title}</h1>
-	<slot name="meta" />
+	<div class="info">
+		{#if type}
+			<p class="type">{type}</p>
+		{/if}
+		<h1 class="title">{title}</h1>
+		<slot name="meta" />
+	</div>
 </div>
 
 <div class="content">
