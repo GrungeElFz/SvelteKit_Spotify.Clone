@@ -47,6 +47,18 @@
 </ItemPage>
 
 <style lang="scss">
+	.meta {
+		font-size: functions.toREM(13);
+		font-size: 600;
+		span {
+			margin-right: 5px;
+			&.tracks-count {
+				font-weight: 400;
+				margin: 0 0 0 5px;
+				color: var(--light-grey);
+			}
+		}
+	}
 	.credits {
 		margin-top: 40px;
 		p {
