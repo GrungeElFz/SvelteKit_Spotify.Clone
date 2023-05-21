@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getCopyrightSymbol } from '$helpers';
-	import { ItemPage } from '$components';
+	import { ItemPage, TrackList } from '$components';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -24,6 +24,8 @@
 			{`${album.total_tracks} Track${album.total_tracks > 1 ? 's' : ''}`}
 		</span>
 	</p>
+
+	<TrackList tracks={album.tracks.items} />
 
 	<div class="tracks">
 		<ul>
