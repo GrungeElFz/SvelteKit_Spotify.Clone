@@ -82,6 +82,7 @@
 					top: 0;
 					left: 0;
 					z-index: -1;
+					background-image: linear-gradient(rgba(0, 0, 0, 0.2));
 				}
 				@include breakpoint.up('md') {
 					padding: 0 30px;
