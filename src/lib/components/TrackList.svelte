@@ -54,3 +54,87 @@
 		</div>
 	{/each}
 </div>
+
+<style lang="scss">
+	.tracks {
+		.row {
+			display: flex;
+			align-items: center;
+			padding: 7px 5px;
+			border-radius: 4px;
+			&.header {
+				border-bottom: 1px solid var(--border);
+				border-radius: 0px;
+				padding: 5px;
+				margin-bottom: 15px;
+				.track-title {
+					color: var(--light-grey);
+					font-size: functions.toREM(12);
+					text-transform: uppercase;
+				}
+				.duration-column :global(svg) {
+					width: 16px;
+					height: 16px;
+				}
+			}
+			&:not(.header) {
+				&:hover {
+					background-color: rgba(255, 255, 255, 0.05);
+				}
+			}
+			.number-column {
+				width: 30px;
+				display: flex;
+				justify-content: flex-end;
+				margin-right: 15px;
+				span.number {
+					color: var(--light-grey);
+					font-size: functions.toREM(14);
+				}
+			}
+			.info-column {
+				flex: 1;
+				.track-title {
+					display: flex;
+					align-items: center;
+					h4 {
+						margin: 0;
+						font-size: functions.toREM(15);
+						font-weight: 400;
+						line-height: 1;
+					}
+					span.explicit {
+						text-transform: uppercase;
+						font-size: functions.toREM(8);
+						margin-left: 10px;
+						border: 1px solid;
+						padding: 2px 3px;
+						border-radius: 2px;
+						line-height: functions.toREM(10);
+						color: var(--light-gray);
+					}
+				}
+				.artists {
+					color: var(--light-grey);
+					font-size: functions.toREM(13);
+					margin: 7px 0 0;
+					line-height: 1;
+					a {
+						color: inherit;
+						text-decoration: none;
+					}
+				}
+			}
+			.duration-column {
+				span.duration {
+					color: var(--light-grey);
+					font-size: functions.toREM(14);
+				}
+			}
+			.actions-column {
+				width: 30px;
+				margin-left: 15px;
+			}
+		}
+	}
+</style>
