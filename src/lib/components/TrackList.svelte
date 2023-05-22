@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { msToTime } from '$helpers';
 	import { Clock8, ListPlus } from 'lucide-svelte';
 
 	export let tracks: SpotifyApi.TrackObjectFull[] | SpotifyApi.TrackObjectSimplified[];
@@ -44,7 +45,7 @@
 			</div>
 
 			<div class="duration-column">
-				<span class="duration">{track.duration_ms}</span>
+				<span class="duration">{msToTime(track.duration_ms)}</span>
 			</div>
 
 			<div class="actions-column">
