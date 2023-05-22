@@ -16,7 +16,7 @@
 		</div>
 
 		<div class="duration-column">
-			<Clock8 aria-hidden focusable="false" />
+			<Clock8 aria-hidden focusable="false" color="var(--light-grey)" />
 		</div>
 
 		<div class="actions-column" />
