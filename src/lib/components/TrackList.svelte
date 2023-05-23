@@ -83,6 +83,12 @@
 			align-items: center;
 			padding: 7px 5px;
 			border-radius: 4px;
+			&.is-current {
+				.info-column .track-title h4,
+				.number-column span.number {
+					color: var(--accent-color);
+				}
+			}
 			&.header {
 				border-bottom: 1px solid var(--border);
 				border-radius: 0px;
@@ -101,6 +107,15 @@
 			&:not(.header) {
 				&:hover {
 					background-color: rgba(255, 255, 255, 0.05);
+					.number-column {
+						.player {
+							display: block;
+						}
+						span.number,
+						.playing-gif {
+							display: none;
+						}
+					}
 				}
 			}
 			.number-column {
@@ -111,6 +126,12 @@
 				span.number {
 					color: var(--light-grey);
 					font-size: functions.toREM(14);
+				}
+				.playing-gif {
+					width: 12px;
+				}
+				.player {
+					display: none;
 				}
 			}
 			.info-column {
