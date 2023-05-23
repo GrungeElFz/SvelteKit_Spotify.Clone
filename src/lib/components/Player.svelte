@@ -15,7 +15,7 @@
 	}>();
 
 	let audio: HTMLAudioElement;
-	let paused: true;
+	let paused = true;
 
 	function onPlay() {
 		if (current && current !== audio) {
