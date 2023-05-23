@@ -18,6 +18,20 @@
 		});
 	}
 
+	let isLoading = false;
+	const loadMoreTracks = async () => {
+		if (!tracks.next) return;
+		isLoading = true;
+		const res = await fetch(tracks.next.replace('https://api.spotify.com/v1/', '/api/spotify/'));
+		const resJSON = await res.json();
+		if (res.ok) {
+			tracks = { ...resJSON, items: [...tracks.items, ...resJSON.items] };
+		} else {
+			alert(resJSON.error.message || 'Could not load data!');
+		}
+		isLoading = false;
+	};
+
 	const followersFormat = Intl.NumberFormat('en', { notation: 'compact' });
 </script>
 
@@ -38,6 +52,14 @@
 
 	{#if playlist.tracks.items.length > 0}
 		<TrackList tracks={filteredTracks} />
+		{#if tracks.next}
+			<div class="load-more">
+				<Button element="button" variant="outline" disabled={isLoading} on:click={loadMoreTracks}>
+					Load More
+					<span class="visually-hidden">Tracks</span>
+				</Button>
+			</div>
+		{/if}
 	{:else}
 		<div class="empty-playlist">
 			<p>No items added to this playlist yet.</p>
