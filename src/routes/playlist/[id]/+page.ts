@@ -63,6 +63,7 @@ export const load: PageLoad = async ({ fetch: _fetch, params, depends, route, ur
 	return {
 		playlist: playlistResJSON,
 		color,
-		title: playlistResJSON.name
+		title: playlistResJSON.name,
+		isFollowing
 	};
 };
