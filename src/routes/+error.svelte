@@ -1,6 +1,10 @@
 <script lang="ts">
+	import { invalidate } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { Button, LogoutButton } from '$components';
+
+	let isRetrying = false;
+	const retryRoutes = ['/album/[id]'];
 </script>
 
 <svelte:head>
@@ -29,6 +33,20 @@
 		<p>Oops! Something went wrong on the server. It's on us, not you.</p>
 		<div class="buttons">
 			<Button element="button" on:click={() => window.location.reload()}>Refresh</Button>
+		</div>
+	{/if}
+
+	{#if ![404, 401].includes($page.status) && $page.route.id && retryRoutes.includes($page.route.id)}
+		<div class="buttons">
+			<Button
+				disabled={isRetrying}
+				element="button"
+				on:click={async () => {
+					isRetrying = true;
+					await invalidate(`app:${$page.route.id}`);
+					isRetrying = false;
+				}}>Retry</Button
+			>
 		</div>
 	{/if}
 </div>
