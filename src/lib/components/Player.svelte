@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { Play, Pause } from 'lucide-svelte';
+
 	type Track = SpotifyApi.TrackObjectFull | SpotifyApi.TrackObjectSimplified;
 	export let track: Track;
 
@@ -8,4 +10,20 @@
 
 <div class="player">
 	<audio bind:this={audio} bind:paused controls src={track.preview_url} preload="none" />
+	<button
+		aria-label={paused ? `Play ${track.name}` : `Pause ${track.name}`}
+		on:click={() => {
+			if (paused) {
+				audio.play();
+			} else {
+				audio.pause();
+			}
+		}}
+	>
+		{#if paused}
+			<Play color="var(--text-color)" focusable="false" aria-hidden />
+		{:else}
+			<Pause color="var(--text-color)" focusable="false" aria-hidden />
+		{/if}
+	</button>
 </div>
