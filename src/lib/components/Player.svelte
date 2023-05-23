@@ -27,3 +27,24 @@
 		{/if}
 	</button>
 </div>
+
+<style lang="scss">
+	.player {
+		audio {
+			display: none;
+		}
+		button {
+			width: 12px;
+			height: 12px;
+			padding: 0;
+			background: none;
+			border: none;
+			cursor: pointer;
+			:global(svg) {
+				fill: var(--text-color);
+				width: 12px;
+				height: 12px;
+			}
+		}
+	}
+</style>
