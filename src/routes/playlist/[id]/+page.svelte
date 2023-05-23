@@ -96,4 +96,8 @@
 			}
 		}
 	}
+	.load-more {
+		padding: 15px;
+		text-align: center;
+	}
 </style>
