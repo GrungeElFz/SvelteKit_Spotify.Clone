@@ -5,7 +5,6 @@
 
 	export let data: PageData;
 
-	$: console.log(data);
 	$: color = data.color;
 	$: playlist = data.playlist;
 	$: tracks = data.playlist.tracks;
