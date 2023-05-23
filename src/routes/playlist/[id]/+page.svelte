@@ -154,5 +154,37 @@
 	.load-more {
 		padding: 15px;
 		text-align: center;
+		:global(html.no-js) & {
+			display: none;
+		}
+	}
+	.pagination {
+		display: none;
+		margin-top: 40px;
+		justify-content: space-between;
+		:global(html.no-js) & {
+			display: flex;
+		}
+	}
+	.playlist-actions {
+		display: flex;
+		justify-content: flex-end;
+		margin: 10px 0 30px;
+		.follow-form {
+			:global(.button) {
+				display: flex;
+				align-items: center;
+				:global(svg) {
+					margin-right: 10px;
+					width: 22px;
+					height: 22px;
+				}
+			}
+			p.error {
+				text-align: right;
+				color: var(--error);
+				font-size: functions.toREM(14);
+			}
+		}
 	}
 </style>
