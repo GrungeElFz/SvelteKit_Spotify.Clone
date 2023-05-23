@@ -2,8 +2,12 @@
 	import { Player } from '$components';
 	import { msToTime } from '$helpers';
 	import { Clock8, ListPlus } from 'lucide-svelte';
+	import Playing from '$assets/Playing.gif';
 
 	export let tracks: SpotifyApi.TrackObjectFull[] | SpotifyApi.TrackObjectSimplified[];
+
+	let currentlyPlaying: string | null = null;
+	let isPaused: boolean = false;
 </script>
 
 <div class="tracks">
@@ -24,17 +28,22 @@
 	</div>
 
 	{#each tracks as track, index}
-		<div class="row">
+		<div class="row" class:is-current={currentlyPlaying === track.id}>
 			<div class="number-column">
-				<span class="number">{index + 1}</span>
+				{#if currentlyPlaying === track.id && !isPaused}
+					<img class="playing-gif" src={Playing} alt="" />
+				{:else}
+					<span class="number">{index + 1}</span>
+				{/if}
 				<div class="player">
 					<Player
 						{track}
 						on:play={(e) => {
-							console.log(e.detail.track);
+							currentlyPlaying = e.detail.track.id;
+							isPaused = false;
 						}}
 						on:pause={(e) => {
-							console.log(e.detail.track);
+							isPaused = e.detail.track.id === currentlyPlaying;
 						}}
 					/>
 				</div>
