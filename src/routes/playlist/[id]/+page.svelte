@@ -11,6 +11,7 @@
 
 	let isLoading = false;
 	let isLoadingFollow = false;
+	let followButton: Button<'button'>;
 
 	$: color = data.color;
 	$: playlist = data.playlist;
@@ -71,13 +72,20 @@
 					return async ({ result }) => {
 						isLoadingFollow = false;
 						await applyAction(result);
+						followButton.focus();
 						if (result.type === 'success') {
 							isFollowing = !isFollowing;
 						}
 					};
 				}}
 			>
-				<Button element="button" type="submit" variant="outline" disabled={isLoadingFollow}>
+				<Button
+					bind:this={followButton}
+					element="button"
+					type="submit"
+					variant="outline"
+					disabled={isLoadingFollow}
+				>
 					<Heart aria-hidden focusable="false" fill={isFollowing ? 'var(--text-color)' : 'none'} />
 					{isFollowing ? 'Unfollow' : 'Follow'}
 					<span class="visually-hidden">{playlist.name} playlist</span>
