@@ -28,7 +28,15 @@
 			<div class="number-column">
 				<span class="number">{index + 1}</span>
 				<div class="player">
-					<Player {track} />
+					<Player
+						{track}
+						on:play={(e) => {
+							console.log(e.detail.track);
+						}}
+						on:pause={(e) => {
+							console.log(e.detail.track);
+						}}
+					/>
 				</div>
 			</div>
 
