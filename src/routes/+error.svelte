@@ -24,6 +24,13 @@
 			<LogoutButton />
 		</div>
 	{/if}
+
+	{#if $page.status === 500}
+		<p>Oops! Something went wrong on the server. It's on us, not you.</p>
+		<div class="buttons">
+			<Button element="button" on:click={() => window.location.reload()}>Refresh</Button>
+		</div>
+	{/if}
 </div>
 
 <style lang="scss">
