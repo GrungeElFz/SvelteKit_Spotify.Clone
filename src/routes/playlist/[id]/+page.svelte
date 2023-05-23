@@ -47,3 +47,32 @@
 		</div>
 	{/if}
 </ItemPage>
+
+<style lang="scss">
+	.empty-playlist {
+		text-align: center;
+		margin-top: 40px;
+		p {
+			font-size: functions.toREM(22);
+			font-weight: 600;
+		}
+		:global(a) {
+			margin: 0 10px;
+		}
+	}
+	.playlist-description {
+		color: var(--light-gray);
+		font-size: functions.toREM(18);
+		margin-bottom: 0;
+	}
+	.meta {
+		font-size: functions.toREM(13);
+		margin-top: 10px;
+		span {
+			margin-right: 5px;
+			&:first-child {
+				font-weight: 600;
+			}
+		}
+	}
+</style>
