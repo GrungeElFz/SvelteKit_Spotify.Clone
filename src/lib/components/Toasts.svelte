@@ -48,11 +48,25 @@
 			padding: 10px 20px;
 			margin-bottom: 10px;
 			font-weight: 500;
+			position: relative;
 			&.error {
 				background-color: var(--error);
 			}
 			&.warning {
 				background-color: var(--warning);
+			}
+			.close {
+				background: none;
+				padding: 5px;
+				border: none;
+				position: absolute;
+				top: 0;
+				right: 0;
+				cursor: pointer;
+				:global(svg) {
+					width: 18px;
+					height: 18px;
+				}
 			}
 		}
 	}
