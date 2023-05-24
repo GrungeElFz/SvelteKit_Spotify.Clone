@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Card } from '$components';
+	import { Button, Card, Pagination } from '$components';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -19,6 +19,8 @@
 				<Card {item} />
 			{/each}
 		</div>
+
+		<Pagination />
 	{:else}
 		<div class="empty">
 			<p>No Playlists Yet!</p>
