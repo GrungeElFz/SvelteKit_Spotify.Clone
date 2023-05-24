@@ -26,3 +26,25 @@
 		</div>
 	{/if}
 </div>
+
+<style lang="scss">
+	.content {
+		padding-bottom: 60px;
+		.title {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		.grid-items {
+			margin-bottom: 40px;
+		}
+		.empty {
+			text-align: center;
+			margin-top: 40px;
+			p {
+				font-size: functions.toREM(22);
+				font-weight: 600;
+			}
+		}
+	}
+</style>
