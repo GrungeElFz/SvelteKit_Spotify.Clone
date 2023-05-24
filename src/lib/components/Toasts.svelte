@@ -2,6 +2,7 @@
 	import { toasts } from '$stores';
 	import { fly } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
+	import { X } from 'lucide-svelte';
 </script>
 
 {#if $toasts.length > 0}
@@ -15,6 +16,15 @@
 				<div class="content" role="status">
 					{toast.message}
 				</div>
+				<button
+					class="close"
+					aria-label="Close toast"
+					on:click={() => {
+						toasts.remove(toast.id);
+					}}
+				>
+					<X focusable="false" aria-hidden color="var(--text-color)" />
+				</button>
 			</div>
 		{/each}
 	</div>
