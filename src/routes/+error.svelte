@@ -36,7 +36,7 @@
 		</div>
 	{/if}
 
-	{#if ![404, 401].includes($page.status) && $page.route.id && retryRoutes.includes($page.route.id)}
+	{#if ![404, 401].includes($page.status) && $page.route.id && retryRoutes.includes($page.route.id) && $page.status !== 500}
 		<div class="buttons">
 			<Button
 				disabled={isRetrying}
