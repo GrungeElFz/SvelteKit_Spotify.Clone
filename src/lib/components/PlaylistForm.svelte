@@ -43,3 +43,32 @@
 		<Button element="button" type="submit">Create Playlist</Button>
 	</div>
 </form>
+
+<style lang="scss">
+	form {
+		max-width: 400px;
+		.field {
+			margin-bottom: 20px;
+			&.has-error input {
+				outline: 2px solid var(--error);
+			}
+			label {
+				display: inline-block;
+				margin-bottom: 10px;
+				font-size: functions.toREM(14);
+			}
+			input {
+				width: 100%;
+			}
+		}
+		p.error {
+			color: var(--error);
+			font-size: functions.toREM(14);
+			margin: 10px 0 0;
+		}
+		.submit-button {
+			text-align: right;
+			margin-top: 40px;
+		}
+	}
+</style>
