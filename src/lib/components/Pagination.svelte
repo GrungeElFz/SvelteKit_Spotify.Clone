@@ -54,3 +54,20 @@
 		{/if}
 	</div>
 </div>
+
+<style lang="scss">
+	.pagination {
+		display: none;
+		justify-content: space-between;
+		:global(html.no-js) & {
+			display: flex;
+		}
+	}
+	.load-more {
+		padding: 15px;
+		text-align: center;
+		:global(html.no-js) {
+			display: none;
+		}
+	}
+</style>
