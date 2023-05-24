@@ -1,11 +1,17 @@
 <script lang="ts">
 	import { toasts } from '$stores';
+	import { fly } from 'svelte/transition';
+	import { flip } from 'svelte/animate';
 </script>
 
 {#if $toasts.length > 0}
 	<div class="toasts">
 		{#each $toasts as toast (toast.id)}
-			<div class="toast {toast.type}">
+			<div
+				class="toast {toast.type}"
+				transition:fly={{ x: 100, duration: 300 }}
+				animate:flip={{ duration: 300 }}
+			>
 				<div class="content" role="status">
 					{toast.message}
 				</div>
