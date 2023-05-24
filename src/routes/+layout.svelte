@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Navigation, Header } from '$components';
+	import { Navigation, Header, Toasts } from '$components';
 	import { page } from '$app/stores';
 	import NProgress from 'nprogress';
 	import 'nprogress/nprogress.css';
@@ -38,6 +38,8 @@
 <svelte:head>
 	<title>Spotify{$page.data.title ? ` - ${$page.data.title}` : ''}</title>
 </svelte:head>
+
+<Toasts />
 
 <div id="main">
 	{#if user}
