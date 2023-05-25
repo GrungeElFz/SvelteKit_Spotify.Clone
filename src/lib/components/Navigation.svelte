@@ -182,12 +182,30 @@
 			width: 130px;
 		}
 		.nav-content-inner {
-			padding: 20px;
 			min-width: var(--sidebar-width);
 			background-color: var(--sidebar-color);
 			height: 100vh;
-			overflow: auto;
 			display: none;
+			.logo-and-menu {
+				padding: 20px 20px 0;
+				overflow: hidden;
+			}
+			.all-playlists {
+				flex: 1;
+				overflow: auto;
+				padding: 15px 20px;
+				border-top: 1px solid var(--border);
+				ul {
+					list-style: none;
+					margin: 0;
+					li {
+						margin: 0 0 5px;
+						a {
+							margin: 0;
+						}
+					}
+				}
+			}
 			ul {
 				padding: 0;
 				margin: 20px 0 0;
@@ -225,7 +243,8 @@
 			top: 0;
 			.nav-content-inner {
 				@include breakpoint.up('md') {
-					display: block;
+					display: flex;
+					flex-direction: column;
 				}
 			}
 		}
@@ -241,7 +260,8 @@
 				opacity: 0;
 			}
 			@include breakpoint.down('md') {
-				display: block;
+				display: flex;
+				flex-direction: column;
 			}
 		}
 		:global(.menu-button) {
