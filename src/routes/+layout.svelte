@@ -87,6 +87,30 @@
 		display: flex;
 		#content {
 			flex: 1;
+			.message {
+				position: sticky;
+				z-index: 9999;
+				padding: 10px 20px;
+				top: 0;
+				.close {
+					position: absolute;
+					right: 10px;
+					top: 5px;
+					&:focus {
+						outline-color: #fff;
+					}
+					:global(svg) {
+						stroke: var(--text-color);
+						vertical-align: middle;
+					}
+				}
+				&.error {
+					background-color: var(--error);
+				}
+				&.success {
+					background-color: var(--accent-color);
+				}
+			}
 			#topbar {
 				position: fixed;
 				height: var(--header-height);
