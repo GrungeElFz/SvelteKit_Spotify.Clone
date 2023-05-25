@@ -79,7 +79,17 @@
 
 			<div class="actions-column" class:is-owner={isOwner}>
 				{#if isOwner}
-					<ListX aria-hidden focusable="false" />
+					<form method="POST" action="/playlist/{$page.params.id}?/removeItem">
+						<input hidden name="track" value={track.id} />
+						<button
+							type="submit"
+							title="Remove {track.name} from playlist"
+							aria-label="Remove {track.name} from playlist"
+							class="remove-playlist-button"
+						>
+							<ListX aria-hidden focusable="false" />
+						</button>
+					</form>
 				{:else}
 					<button
 						title="Add {track.name} to a playlist"
