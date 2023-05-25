@@ -299,7 +299,7 @@
 				width: 30px;
 				margin-left: 15px;
 				.add-playlist-button,
-				remove-playlist-button {
+				.remove-playlist-button {
 					background: none;
 					border: none;
 					padding: 5px;
