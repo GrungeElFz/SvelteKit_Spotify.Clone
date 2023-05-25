@@ -80,6 +80,7 @@
 
 <style lang="scss">
 	.search-form {
+		margin-left: 20px;
 		display: none;
 		@include breakpoint.up('lg') {
 			display: block;
