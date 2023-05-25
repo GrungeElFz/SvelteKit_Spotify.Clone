@@ -77,6 +77,12 @@
 </div>
 
 <style lang="scss">
+	.search-form {
+		display: none;
+		@include breakpoint.up('lg') {
+			display: block;
+		}
+	}
 	.content {
 		display: flex;
 		justify-content: space-between;
