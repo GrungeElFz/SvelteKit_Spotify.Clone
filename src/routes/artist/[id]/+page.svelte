@@ -92,3 +92,19 @@
 		{/if}
 	</div>
 </ItemPage>
+
+<style lang="scss">
+	.section {
+		margin-bottom: 40px;
+		.section-title {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 10px;
+			h2 {
+				font-size: functions.toREM(26);
+				font-weight: 600;
+			}
+		}
+	}
+</style>
