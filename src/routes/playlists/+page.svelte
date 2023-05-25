@@ -1,11 +1,13 @@
 <script lang="ts">
-	import { Button, Card, Pagination } from '$components';
+	import { Button, Card, Pagination, PlaylistForm } from '$components';
 	import Modal from '$components/Modal.svelte';
 	import { toasts } from '$stores';
 	import MicroModal from 'micromodal';
 	import type { PageData } from './$types';
+	import type { ActionData } from './new/$types';
 
 	export let data: PageData;
+	export let form: ActionData;
 
 	let isLoading = false;
 
@@ -59,7 +61,9 @@
 	{/if}
 </div>
 
-<Modal id="add-playlist-modal" title="Add a New Playlist">Content</Modal>
+<Modal id="add-playlist-modal" title="Add a New Playlist">
+	<PlaylistForm {form} userID={data.user?.id} action="/playlists/new" />
+</Modal>
 
 <style lang="scss">
 	.content {
