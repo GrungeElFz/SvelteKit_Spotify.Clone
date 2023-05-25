@@ -38,6 +38,26 @@
 		border-radius: 4px;
 		transition: background 0.3s;
 		position: relative;
+		&.artist {
+			text-align: center;
+			padding: 30px 20px;
+			img,
+			.cover-placeholder {
+				width: 150px;
+				max-width: 100%;
+				border-radius: 100%;
+				box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+			}
+			h4 {
+				margin: 0;
+				text-align: center;
+				font-size: functions.toREM(18);
+				margin-bottom: 0.5em;
+			}
+			p {
+				margin: 0;
+			}
+		}
 		&:hover {
 			background-color: var(--medium-grey);
 			.cover-placeholder {
