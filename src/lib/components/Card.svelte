@@ -6,6 +6,8 @@
 	type ArtistType = SpotifyApi.ArtistObjectFull;
 
 	export let item: AlbumType | PlaylistsType | ArtistType;
+
+	const followersFormat = Intl.NumberFormat('en', { notation: 'compact' });
 </script>
 
 <div class="card {item.type}">
@@ -22,6 +24,9 @@
 	{/if}
 	{#if item.type === 'playlist'}
 		<p class="truncate-2">{item.description}</p>
+	{/if}
+	{#if item.type === 'artist'}
+		<p class="truncate-1">{followersFormat.format(item.followers.total)} Followers</p>
 	{/if}
 </div>
 
