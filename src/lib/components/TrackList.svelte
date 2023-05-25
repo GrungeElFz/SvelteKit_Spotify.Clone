@@ -103,7 +103,7 @@
 						<div id="{track.id}-playlists-menu" class="playlists-menu" style="display: none;">
 							<div class="playlists-menu-content">
 								<form method="POST" action="/playlist?/addItem&redirect={$page.url.pathname}">
-									<input hidden value={track.id} />
+									<input hidden value={track.id} name="track" />
 									<div class="field">
 										<select aria-label="Playlist" name="playlist">
 											{#each userPlaylists as playlist}
