@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import { Navigation, LogoutButton, SearchForm } from '$components';
+	import { Navigation, LogoutButton, SearchForm, HeaderNav } from '$components';
 	import { page } from '$app/stores';
 	import { ChevronDown, ExternalLink } from 'lucide-svelte';
 	import { tippy } from '$actions';
@@ -19,6 +19,8 @@
 		{#if browser}
 			<Navigation desktop={false} {userAllPlaylists} />
 		{/if}
+
+		<HeaderNav />
 
 		{#if $page.url.pathname.startsWith('/search')}
 			<div class="search-form">
