@@ -90,6 +90,7 @@
 			}
 			input {
 				width: 100%;
+				color: var(--dark-grey);
 			}
 		}
 		p.error {
