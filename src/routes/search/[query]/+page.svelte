@@ -53,3 +53,15 @@
 		</div>
 	</section>
 {/if}
+
+<style lang="scss">
+	h1 {
+		font-size: functions.toREM(28);
+	}
+	h2 {
+		font-size: functions.toREM(22);
+	}
+	.section {
+		margin-bottom: 40px;
+	}
+</style>
