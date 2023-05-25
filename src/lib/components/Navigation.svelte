@@ -195,6 +195,14 @@
 				overflow: auto;
 				padding: 15px 20px;
 				border-top: 1px solid var(--border);
+				&::-webkit-scrollbar {
+					width: 6px;
+					background-color: transparent;
+				}
+				&::-webkit-scrollbar-thumb {
+					background-color: var(--light-grey);
+					border-radius: 3px;
+				}
 				ul {
 					list-style: none;
 					margin: 0;
