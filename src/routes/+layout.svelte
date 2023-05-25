@@ -9,6 +9,7 @@
 	import type { LayoutData } from './$types';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import { browser } from '$app/environment';
+	import { X } from 'lucide-svelte';
 
 	export let data: LayoutData;
 
@@ -22,6 +23,9 @@
 
 	$: user = data.user;
 	$: userAllPlaylists = data.userAllPlaylists;
+
+	$: hasError = $page.url.searchParams.get('error');
+	$: hasSuccess = $page.url.searchParams.get('success');
 
 	NProgress.configure({ showSpinner: false });
 
@@ -53,6 +57,15 @@
 		</div>
 	{/if}
 	<div id="content">
+		{#if hasError || hasSuccess}
+			<div class="message" role="status" class:error={hasError} class:success={hasSuccess}>
+				{hasError ?? hasSuccess}
+				<a href={$page.url.pathname} class="close">
+					<X aria-hidden focusable="false" />
+					<span class="visually-hidden">Close Message</span>
+				</a>
+			</div>
+		{/if}
 		{#if user}
 			<div id="topbar" bind:this={topbar}>
 				<div

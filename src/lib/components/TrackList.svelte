@@ -2,6 +2,7 @@
 	import { Player, Button } from '$components';
 	import { msToTime } from '$helpers';
 	import { tippy } from '$actions';
+	import { page } from '$app/stores';
 	import { Clock8, ListPlus, ListX } from 'lucide-svelte';
 	import Playing from '$assets/Playing.gif';
 
@@ -101,7 +102,7 @@
 					{#if userPlaylists}
 						<div id="{track.id}-playlists-menu" class="playlists-menu" style="display: none;">
 							<div class="playlists-menu-content">
-								<form method="POST">
+								<form method="POST" action="/playlist?/addItem&redirect={$page.url.pathname}">
 									<input hidden value={track.id} />
 									<div class="field">
 										<select aria-label="Playlist" name="playlist">
