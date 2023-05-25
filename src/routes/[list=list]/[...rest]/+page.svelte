@@ -41,3 +41,12 @@
 		{/if}
 	{/if}
 </div>
+
+<style lang="scss">
+	.grid-items {
+		margin-bottom: 40px;
+	}
+	.content {
+		padding-bottom: 60px;
+	}
+</style>
