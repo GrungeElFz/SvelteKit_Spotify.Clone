@@ -58,3 +58,19 @@
 	icon={ChevronRight}
 	class="nav-button"
 />
+
+<style lang="scss">
+	:global(button.nav-button) {
+		background-color: var(--menu-background-color);
+		margin-right: 5px;
+		border-radius: 100%;
+		height: 34px;
+		width: 34px;
+		&:active {
+			background-color: var(--accent-color);
+		}
+		:global(html.no-js) & {
+			display: none;
+		}
+	}
+</style>
