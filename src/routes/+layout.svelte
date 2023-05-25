@@ -20,8 +20,6 @@
 		headerOpacity = scrollY / topbar.offsetHeight < 1 ? scrollY / topbar.offsetHeight : 1;
 	}
 
-	$: console.log(topbar && scrollY / topbar.offsetHeight);
-
 	$: user = data.user;
 
 	NProgress.configure({ showSpinner: false });
