@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Player } from '$components';
+	import { Player, Button } from '$components';
 	import { msToTime } from '$helpers';
 	import { tippy } from '$actions';
 	import { Clock8, ListPlus, ListX } from 'lucide-svelte';
@@ -101,7 +101,22 @@
 					{#if userPlaylists}
 						<div id="{track.id}-playlists-menu" class="playlists-menu" style="display: none;">
 							<div class="playlists-menu-content">
-								{track.name}
+								<form method="POST">
+									<input hidden value={track.id} />
+									<div class="field">
+										<select aria-label="Playlist" name="playlist">
+											{#each userPlaylists as playlist}
+												<option value={playlist.id}>{playlist.name}</option>
+											{/each}
+										</select>
+									</div>
+									<div class="submit-button">
+										<Button element="button" type="submit">
+											Add
+											<span class="visually-hidden"> {track.name} to selected playlist.</span>
+										</Button>
+									</div>
+								</form>
 							</div>
 						</div>
 					{/if}
