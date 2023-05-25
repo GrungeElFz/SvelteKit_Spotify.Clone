@@ -226,6 +226,36 @@
 			.actions-column {
 				width: 30px;
 				margin-left: 15px;
+				.add-playlist-button {
+					background: none;
+					border: none;
+					padding: 5px;
+					cursor: pointer;
+					:global(svg) {
+						stroke: var(--text-color);
+						vertical-align: middle;
+						width: 22px;
+						height: 22px;
+					}
+					&:disabled {
+						opacity: 0.8;
+						cursor: not-allowed;
+					}
+				}
+				.playlists-menu-content {
+					padding: 15px;
+					.field {
+						select {
+							width: 100%;
+							height: 35px;
+							border-radius: 4px;
+						}
+					}
+					.submit-button {
+						margin-top: 10px;
+						text-align: right;
+					}
+				}
 			}
 		}
 	}
