@@ -286,6 +286,9 @@
 					a {
 						color: inherit;
 						text-decoration: none;
+						&:hover {
+							color: var(--accent-color);
+						}
 					}
 				}
 			}
