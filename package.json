@@ -43,6 +43,7 @@
 		"@fontsource/metropolis": "^4.5.3",
 		"@types/spotify-api": "^0.0.21",
 		"@unsass/breakpoint": "^2.3.0",
+		"@vercel/analytics": "^1.0.1",
 		"lucide-svelte": "^0.144.0",
 		"micromodal": "^0.4.10",
 		"modern-normalize": "^1.1.0",
