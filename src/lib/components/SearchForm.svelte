@@ -27,3 +27,27 @@
 		/>
 	</div>
 </form>
+
+<style lang="scss">
+	.search-input-wrapper {
+		position: relative;
+		display: flex;
+		align-items: center;
+		:global(svg) {
+			position: absolute;
+			margin-left: 10px;
+			stroke: var(--medium-grey);
+			width: 22px;
+			height: 22px;
+		}
+
+		.search-input {
+			border: none;
+			padding: 0 20px 0 40px;
+			height: calc(var(--header-height) - 25px);
+			border-radius: 20px;
+			font-size: functions.toREM(14);
+			color: var(--medium-grey);
+		}
+	}
+</style>
