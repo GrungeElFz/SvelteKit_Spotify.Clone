@@ -2,8 +2,7 @@
 	import { applyAction, enhance } from '$app/forms';
 	import { invalidateAll } from '$app/navigation';
 	import { page } from '$app/stores';
-	import { Button, ItemPage, PlaylistForm, Modal } from '$components';
-	import TrackList from '$components/TrackList.svelte';
+	import { Button, ItemPage, TrackList, PlaylistForm, Modal } from '$components';
 	import MicroModal from 'micromodal';
 	import { Heart } from 'lucide-svelte';
 	import type { ActionData, PageData } from './$types';
