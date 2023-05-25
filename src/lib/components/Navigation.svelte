@@ -9,6 +9,7 @@
 	import logo from '$assets/Spotify_White.Logo.png';
 
 	export let desktop: boolean;
+	export let userAllPlaylists: SpotifyApi.PlaylistObjectSimplified[] | undefined;
 
 	let isMobileMenuOpen = false;
 	$: isOpen = desktop || isMobileMenuOpen;
@@ -119,31 +120,44 @@
 					class="close-menu-button"
 				/>
 			{/if}
-			<img src={logo} class="logo" alt="Spotify" />
-			<ul>
-				{#each menuItems as item, index}
-					{@const iconProps = {
-						focusable: 'false',
-						'aria-hidden': true,
-						color: 'var(--text-color)',
-						strokeWidth: 2,
-						size: 26
-					}}
-					<li class:active={item.path === $page.url.pathname}>
-						{#if menuItems.length === index + 1}
-							<a bind:this={lastFocusableElement} href={item.path} on:keydown={moveFocusToTop}>
-								<svelte:component this={item.icon} {...iconProps} />
-								{item.label}
-							</a>
-						{:else}
-							<a href={item.path}>
-								<svelte:component this={item.icon} {...iconProps} />
-								{item.label}
-							</a>
-						{/if}
-					</li>
-				{/each}
-			</ul>
+			<div class="logo-and-menu">
+				<img src={logo} class="logo" alt="Spotify" />
+				<ul>
+					{#each menuItems as item, index}
+						{@const iconProps = {
+							focusable: 'false',
+							'aria-hidden': true,
+							color: 'var(--text-color)',
+							strokeWidth: 2,
+							size: 26
+						}}
+						<li class:active={item.path === $page.url.pathname}>
+							{#if menuItems.length === index + 1}
+								<a bind:this={lastFocusableElement} href={item.path} on:keydown={moveFocusToTop}>
+									<svelte:component this={item.icon} {...iconProps} />
+									{item.label}
+								</a>
+							{:else}
+								<a href={item.path}>
+									<svelte:component this={item.icon} {...iconProps} />
+									{item.label}
+								</a>
+							{/if}
+						</li>
+					{/each}
+				</ul>
+			</div>
+			{#if userAllPlaylists && userAllPlaylists.length > 0}
+				<div class="all-playlists">
+					<ul>
+						{#each userAllPlaylists as playlist}
+							<li class:active={$page.url.pathname === `/playlist/${playlist.id}`}>
+								<a href="/playlist/{playlist.id}">{playlist.name}</a>
+							</li>
+						{/each}
+					</ul>
+				</div>
+			{/if}
 		</div>
 	</nav>
 </div>

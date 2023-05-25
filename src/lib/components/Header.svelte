@@ -5,6 +5,8 @@
 	import { ChevronDown, ExternalLink } from 'lucide-svelte';
 	import { tippy } from '$actions';
 
+	export let userAllPlaylists: SpotifyApi.PlaylistObjectSimplified[] | undefined;
+
 	$: user = $page.data.user;
 </script>
 
@@ -15,7 +17,7 @@
 			It will not be rendered during SSR.
 		-->
 		{#if browser}
-			<Navigation desktop={false} />
+			<Navigation desktop={false} {userAllPlaylists} />
 		{/if}
 	</div>
 	<div class="right">
