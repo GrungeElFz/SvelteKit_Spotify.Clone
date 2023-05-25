@@ -80,5 +80,20 @@
 			font-size: functions.toREM(14);
 			color: var(--light-gray);
 		}
+		.fail {
+			text-align: center;
+			margin-top: 40px;
+		}
+		.following {
+			margin-top: 30px;
+			h2 {
+				font-size: functions.toREM(24);
+				margin-bottom: 0.7em;
+			}
+			.view-all-button {
+				margin-top: 30px;
+				text-align: right;
+			}
+		}
 	}
 </style>
