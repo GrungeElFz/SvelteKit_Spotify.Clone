@@ -22,3 +22,50 @@
 		</div>
 	</div>
 </div>
+
+<style lang="scss">
+	.modal {
+		display: none;
+		&:global(.is-open) {
+			display: block;
+		}
+		.modal-overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background-color: rgba(0, 0, 0, 0.6);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 9999;
+		}
+		.modal-content {
+			background-color: var(--dark-grey);
+			padding: 30px;
+			max-width: 400px;
+			max-height: 100vh;
+			overflow-y: auto;
+			border-radius: 4px;
+			position: relative;
+		}
+		header {
+			margin-right: 30px;
+			h2 {
+				font-size: functions.toREM(26);
+			}
+			.close-button {
+				background: none;
+				border: none;
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				cursor: pointer;
+				:global(svg) {
+					stroke: var(--text-color);
+				}
+			}
+		}
+	}
+</style>
