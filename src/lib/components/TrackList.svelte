@@ -4,6 +4,7 @@
 	import { tippy } from '$actions';
 	import { page } from '$app/stores';
 	import { enhance } from '$app/forms';
+	import { invalidate } from '$app/navigation';
 	import { toasts } from '$stores';
 	import { hideAll } from 'tippy.js';
 	import { Clock8, ListPlus, ListX } from 'lucide-svelte';
@@ -16,6 +17,7 @@
 	let currentlyPlaying: string | null = null;
 	let isPaused: boolean = false;
 	let isAddingToPlaylist: string[] = [];
+	let isRemovingFromPlaylist: string[] = [];
 </script>
 
 <div class="tracks">
@@ -79,13 +81,41 @@
 
 			<div class="actions-column" class:is-owner={isOwner}>
 				{#if isOwner}
-					<form method="POST" action="/playlist/{$page.params.id}?/removeItem">
+					<form
+						method="POST"
+						action="/playlist/{$page.params.id}?/removeItem"
+						use:enhance={({ cancel }) => {
+							if (isRemovingFromPlaylist.includes(track.id)) {
+								cancel();
+							}
+							isRemovingFromPlaylist = [...isRemovingFromPlaylist, track.id];
+							return ({ result }) => {
+								if (result.type === 'error') {
+									toasts.error(result.error.message);
+								}
+								if (result.type === 'redirect') {
+									const url = new URL(`${$page.url.origin}${result.location}`);
+									const error = url.searchParams.get('error');
+									const success = url.searchParams.get('success');
+									if (error) {
+										toasts.error(error);
+									}
+									if (success) {
+										toasts.success(success);
+										invalidate(`/api/spotify/playlists/${$page.params.id}`);
+									}
+								}
+								isRemovingFromPlaylist = isRemovingFromPlaylist.filter((t) => t !== track.id);
+							};
+						}}
+					>
 						<input hidden name="track" value={track.id} />
 						<button
 							type="submit"
 							title="Remove {track.name} from playlist"
 							aria-label="Remove {track.name} from playlist"
 							class="remove-playlist-button"
+							disabled={isRemovingFromPlaylist.includes(track.id)}
 						>
 							<ListX aria-hidden focusable="false" />
 						</button>
