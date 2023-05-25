@@ -21,3 +21,22 @@
 		>
 	</ItemPage>
 </div>
+
+<style lang="scss">
+	#profile-page {
+		:global(.banner) {
+			align-items: center;
+			text-align: center;
+			@include breakpoint.up('sm') {
+				text-align: left;
+			}
+		}
+		:global(.cover-img) {
+			border-radius: 100%;
+		}
+		.following-count {
+			font-size: functions.toREM(14);
+			color: var(--light-gray);
+		}
+	}
+</style>
