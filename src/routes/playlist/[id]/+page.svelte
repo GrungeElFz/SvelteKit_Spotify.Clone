@@ -60,7 +60,7 @@
 					? ''
 					: 's'}
 			</span>
-			<span>{playlist.tracks.total} Tracks</span>
+			<span>{playlist.tracks.total} Track{playlist.tracks.total < 1 ? '' : 's'}</span>
 		</p>
 	</div>
 
