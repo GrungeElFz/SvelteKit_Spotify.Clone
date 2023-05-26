@@ -7,8 +7,10 @@
 <div class="wrapper">
 	<div class="content">
 		<img src={logo} class="logo" alt="Spotify" />
-		<h1>This is H1 tags</h1>
-		<p>This is P tags, This is P tags, This is P tags.</p>
+		<h1>Spotify Clone.. built by SvelteKit</h1>
+		<a class="github-repo" href="https://github.com/GrungeElFz/SvelteKit_Spotify.Clone">
+			<p>Repository: GrungeElFz</p>
+		</a>
 		<div class="buttons">
 			<Button
 				element="a"
