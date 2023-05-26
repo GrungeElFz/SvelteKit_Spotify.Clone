@@ -4,10 +4,10 @@ I ❤️ [Svelte](https://kit.svelte.dev/), why don't you? 👀
 
 ## Creating a project
 
-#### [Vite](https://vitejs.dev/guide/) Initialize
+#### [Vite](https://kit.svelte.dev/docs/creating-a-project) Initialize
 
 ```
-npm create svelte@latest
+npm create svelte@latest SvelteKit_Spotify.Clone
 
 ✅ Skeleton project
 ✅ TypeScript syntax
@@ -18,6 +18,8 @@ npm create svelte@latest
 ```
 
 ## Adapter
+
+#### [Deployment Configuration](https://kit.svelte.dev/docs/adapter-vercel)
 
 Install with `npm i -D @sveltejs/adapter-vercel` ; then , add the adapter to `svelte.config.js`
 
