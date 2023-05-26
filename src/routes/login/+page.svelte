@@ -62,6 +62,14 @@
 		p {
 			font-size: functions.toREM(20);
 		}
+		.github-repo {
+			text-decoration: none;
+			color: var(--text-color);
+			transition-duration: 0.3s;
+			&:hover {
+				color: var(--light-grey);
+			}
+		}
 		.buttons {
 			margin-top: 40px;
 			:global(.button) {
