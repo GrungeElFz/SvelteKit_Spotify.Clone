@@ -1,38 +1,81 @@
-# create-svelte
+# Spotify Clone, built by SvelteKit
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+I ❤️ [Svelte](https://kit.svelte.dev/), why don't you? 👀
 
 ## Creating a project
 
-If you're seeing this, you've probably already done this step. Congrats!
+#### [Vite](https://vitejs.dev/guide/) Initialize
 
-```bash
-# create a new project in the current directory
+```
 npm create svelte@latest
 
-# create a new project in my-app
-npm create svelte@latest my-app
+✅ Skeleton project
+✅ TypeScript syntax
+✅ ESLint for code linting
+✅ Prettier for code formatting
+✅ Playwright for browser testing
+✅ Vitest for unit testing
 ```
 
-## Developing
+## Adapter
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Install with `npm i -D @sveltejs/adapter-vercel` ; then , add the adapter to `svelte.config.js`
 
-```bash
-npm run dev
+```JavaScript
+import adapter from '@sveltejs/adapter-vercel';
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+export default {
+    kit: {
+        adapter: adapter({
+            // Deployment configuration
+        })
+    }
+};
 ```
 
-## Building
+## Spotify Web API
 
-To create a production version of your app:
+#### [List of Scopes :](https://developer.spotify.com/documentation/web-api/concepts/scopes)
 
-```bash
-npm run build
-```
+##### Images
 
-You can preview the production build with `npm run preview`.
+- `ugc-image-upload`
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+##### Spotify Connect
+
+- `user-read-playback-state`
+- `user-modify-playback-state`
+- `user-read-currently-playing`
+
+##### Playback
+
+- `app-remote-control`
+- `streaming`
+
+##### Playlists
+
+- `playlist-read-private`
+- `playlist-read-collaborative`
+- `playlist-modify-private`
+- `playlist-modify-public`
+
+##### Follow
+
+- `user-follow-modify`
+- `user-follow-read`
+
+##### Listening History
+
+- `user-read-playback-position`
+- `user-top-read`
+- `user-read-recently-played`
+
+##### Library
+
+- `user-library-modify`
+- `user-library-read`
+
+##### Users
+
+- `user-read-email`
+- `user-read-private`
