@@ -83,7 +83,7 @@ BASE_URL= // http://localhost:xxxx
 - [Scss](https://sass-lang.com/)
 - [Vite](https://vitejs.dev/guide/)
 
-## Project Strucutre
+## Project Structure
 
 ```TS
 ├── src/
