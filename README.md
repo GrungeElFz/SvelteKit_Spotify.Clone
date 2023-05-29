@@ -4,6 +4,10 @@ I ❤️ [Svelte](https://kit.svelte.dev/), why don't you? 👀
 
 ![Spotify Clone, built by SvelteKit](src/assets/Banner-SvelteKit_Spotify.Clone.Lighthouse.png)
 
+## Demo
+
+View a live demo of the [Spotify Clone, built by SvelteKit](https://gee-sveltekit-spotify.vercel.app/)
+
 ## Creating a project
 
 #### [Vite](https://kit.svelte.dev/docs/creating-a-project) Initialize
@@ -71,6 +75,13 @@ SPOTIFY_APP_CLIENT_SECRET= // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 SPOTIFY_BASE_URL= // https://api.spotify.com/v1
 BASE_URL= // http://localhost:xxxx
 ```
+
+## Tech Stack
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [SvelteKit](https://kit.svelte.dev/)
+- [Scss](https://sass-lang.com/)
+- [Vite](https://vitejs.dev/guide/)
 
 ## Project Strucutre
 
