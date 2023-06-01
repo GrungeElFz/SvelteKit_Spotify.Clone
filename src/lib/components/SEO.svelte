@@ -6,7 +6,7 @@
 	export const title: string = 'Spotify Clone';
 	export const description: string = 'Spotify Clone, built by SvelteKit';
 	export const type: string = 'website';
-	export const image: string = '/src/assets/Banner-SvelteKit_Spotify.Clone.png';
+	export const image: string = '/Banner-SvelteKit_Spotify.Clone.png';
 	export const canonicalURL: string = `${url}`;
 </script>
 
