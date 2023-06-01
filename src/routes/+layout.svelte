@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Navigation, Header, Toasts, SearchForm } from '$components';
+	import { Navigation, Header, Toasts, SearchForm, SEO } from '$components';
 	import { page } from '$app/stores';
 	import NProgress from 'nprogress';
 	import MicroModal from 'micromodal';
@@ -44,9 +44,7 @@
 
 <svelte:window bind:scrollY />
 
-<svelte:head>
-	<title>Spotify{$page.data.title ? ` - ${$page.data.title}` : ''}</title>
-</svelte:head>
+<SEO />
 
 <Toasts />
 
