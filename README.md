@@ -2,7 +2,17 @@
 
 I ❤️ [Svelte](https://kit.svelte.dev/), why don't you? 👀
 
-![Spotify Clone, built by SvelteKit](src/assets/Banner-SvelteKit_Spotify.Clone.Lighthouse.png)
+![Spotify Clone, built by SvelteKit](static/Banner-SvelteKit_Spotify.Clone.png)
+
+## Lighthouse Scores
+
+![Lighthouse Scores](src/assets/Banner-SvelteKit_Spotify.Clone.Lighthouse.png)
+
+- 🟢 Performance: 94
+- 🟢 Accessibility: 98
+- 🟢 Best Practices: 100
+- 🟢 SEO: 100
+- ⚫️ Progressive Web App: N/A
 
 ## Demo
 
