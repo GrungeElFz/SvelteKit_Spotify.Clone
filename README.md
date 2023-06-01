@@ -90,6 +90,7 @@ BASE_URL= // http://localhost:xxxx
 │   ├── app.d.ts
 │   ├── app.html
 │   ├── assets/
+│   │   ├── Banner-SvelteKit_Spotify.Clone.Lighthouse.png
 │   │   ├── PFP_01000111.N.png
 │   │   ├── Playing.gif
 │   │   ├── Spotify_Dashboard-Setup.png
@@ -115,6 +116,7 @@ BASE_URL= // http://localhost:xxxx
 │   │   │   ├── Pagination.svelte
 │   │   │   ├── Player.svelte
 │   │   │   ├── PlaylistForm.svelte
+│   │   │   ├── SEO.svelte
 │   │   │   ├── SearchForm.svelte
 │   │   │   ├── Toasts.svelte
 │   │   │   ├── TrackList.svelte
@@ -195,7 +197,9 @@ BASE_URL= // http://localhost:xxxx
 │       ├── main.scss
 │       └── tippy-theme.scss
 ├── static/
-│   └── favicon.png
+│   ├── Banner-SvelteKit_Spotify.Clone.png
+│   ├── favicon.png
+│   └── robots.txt
 ├── tests/
 │   └── test.ts
 ├── .env
