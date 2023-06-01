@@ -17,7 +17,6 @@
 	<meta name="title" content={title} />
 	<meta name="description" content={description} />
 	<meta name="viewport" content="width=device-width" />
-	<link rel="icon" type="image/png" href="%sveltekit.assets%/favicon.png" />
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content={type} />
