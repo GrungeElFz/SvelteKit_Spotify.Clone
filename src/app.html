@@ -6,9 +6,23 @@
 				H.className = H.className.replace(/\bno-js\b/, 'js');
 			})(document.documentElement);
 		</script>
+		<!-- Primary Meta Tags -->
 		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="title" content="Spotify Clone" />
+		<meta name="description" content="Spotify Clone, built by SvelteKit" />
 		<meta name="viewport" content="width=device-width" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Spotify Clone" />
+		<meta property="og:description" content="{description}" />
+		<meta property="og:image" content="/src/assets/Banner-SvelteKit_Spotify.Clone.png" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:title" content="Spotify Clone" />
+		<meta property="twitter:description" content="Spotify Clone, built by SvelteKit" />
+		<meta property="twitter:image" content="/src/assets/Banner-SvelteKit_Spotify.Clone.png" />
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
